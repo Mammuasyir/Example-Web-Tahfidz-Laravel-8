@@ -68,7 +68,7 @@
                     @if (Auth::user()->image == '')
                     <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username }}" alt="..." class="avatar-img rounded-circle">
                     @else
-                    <img src="{{ url('storage', Auth::user()->image) }}" class="avatar-img rounded-circle" alt="">
+                    <img src="{{ Auth::user()->image }}" class="avatar-img rounded-circle" alt="">
                     @endif
                     <span class="d-none d-md-block dropdown-toggle ps-2">{{Auth::user()->name}}</span>
                 </a><!-- End Profile Image Icon -->

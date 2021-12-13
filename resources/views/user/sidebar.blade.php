@@ -6,7 +6,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/profile">
                     @if (Auth::user()->image != '')
-                    <img src="{{url('storage', Auth::user()->image)}}" alt="Pp" class="avatar-img rounded-circle" style="width: 60px !important; height: 60px">
+                    <img src="{{Auth::user()->image}}" alt="Pp" class="avatar-img rounded-circle" style="width: 60px !important; height: 60px">
                     @else
                     <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username}}" alt="..." class="avatar-img rounded">
                     @endif

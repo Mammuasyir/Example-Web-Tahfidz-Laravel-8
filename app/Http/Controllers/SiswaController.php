@@ -70,7 +70,7 @@ class SiswaController extends Controller
             'halaqoh_id'    => $request->halaqoh_id,
             'kode_hafalan' =>  'bebas', 
             'total_hafalan' => $request->total_hafalan,
-            'image'         => $request->file('image')->store('image-siswa'),
+            'image'         => $request->image,
         ]);
         $karakter_kode = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         $siswas->kode_hafalan = substr(str_shuffle($karakter_kode), 0, 2);
@@ -110,7 +110,7 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (empty($request->file('image'))) {
+        if (empty($request->image)) {
             Siswa::findOrfail($id)->update([
                 'nama_siswa' => $request->nama_siswa,
                 'halaqoh_id' => $request->halaqoh_id,
@@ -125,7 +125,7 @@ class SiswaController extends Controller
                 'nama_siswa' => $request->nama_siswa,
                 'halaqoh_id' => $request->halaqoh_id,
                 'total_hafalan' => $request->total_hafalan,
-                'image'         => $request->file('image')->store('image-siswa')
+                'image'         => $request->image
             ]);
             return redirect()->route('siswa.index')->with('success', 'Data berhasil diupdate!');
         }

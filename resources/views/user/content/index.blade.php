@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                 @if (Auth::user()->image != '')
-                <img src="{{url('storage/', Auth::user()->image)}}" alt="Profile" class="rounded-circle">
+                <img src="{{Auth::user()->image}}" alt="Profile" class="rounded-circle">
                     @else
                     <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username}}" alt="..." class="avatar-img rounded">
                     @endif
