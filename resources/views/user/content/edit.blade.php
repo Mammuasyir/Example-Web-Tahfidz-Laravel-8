@@ -27,7 +27,7 @@
                     @endif
                 <div class="pt-2">
                     <input name="image" type="file" class="btn btn-primary btn-sm" title="Upload new profile image">
-                    <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                    
                 </div>
             </div>
         </div>
