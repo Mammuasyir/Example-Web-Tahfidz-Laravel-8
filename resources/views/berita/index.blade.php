@@ -2,8 +2,8 @@
 
 <style>
     h6{
-        margin-bottom: 24px;
-        width: 200px;
+        margin-bottom: 15px;
+        width: 170px;
         height: 20px;
         overflow: hidden;
         white-space: nowrap;
@@ -65,8 +65,8 @@
                                 <th scope="row">{{$be->id}}</th>
                                 <td><img src="{{url('storage/',$be->image)}}" style="width: 130px !important; height: 80px" class="rounded-box" alt=""></td>
                                 <td>
-                                    <div class="col-6 text-truncate">
-                                    <a href="{{route('berita.show', $be->id)}}">{{$be->judul}}
+                                    <div class="col-8 text-truncate" style="overflow:hidden; white-space:nowrap; width: 150px;">
+                                    <a href="{{route('berita.show', $be->id)}}">{{$be->judul}}</a>
                                     </div>
                                     </td>
                                 <td>
@@ -92,7 +92,7 @@
 
                             @empty
                             <tr>
-                                <td colspan="5" class="text-center">Artikel Not Found</td>
+                                <td colspan="8" class="text-center">Artikel Not Found</td>
                             </tr>
 
                             @endforelse
