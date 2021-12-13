@@ -26,7 +26,7 @@
                     <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username}}" alt="..." class="avatar-img rounded">
                     @endif
                 <div class="pt-2">
-                    <input name="image" type="file" class="btn btn-primary btn-sm" title="Upload new profile image">
+                    <input name="image" type="text" class="btn btn-primary btn-sm" title="Upload new profile image">
                     
                 </div>
             </div>

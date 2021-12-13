@@ -156,7 +156,7 @@
                                     @foreach($asc as $as)
                                     <tr>
                                         <td class="fw-bold">{{$a++}}</td>
-                                        <td><img src="{{,$as->image}}" style="width: 100px !important; height: 70px" class="avatar-img rounded-circle" alt=""></td>
+                                        <td><img src="{{$as->image}}" style="width: 100px !important; height: 70px" class="avatar-img rounded-circle" alt=""></td>
                                         <td>{{$as->nama_siswa}}</td>
                                         <td>{{$as->halaqoh->nama_halaqoh}}</td>
                                         <td class="fw-bold">{{$as->total_hafalan}}</td>

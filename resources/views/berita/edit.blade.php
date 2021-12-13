@@ -31,7 +31,7 @@
                             <div class="col-lg-6 col-md-20 col-sm-8">
                             <td><img src="{{$berita->image}}" style="width: 130px !important; height: 80px" class="rounded-box" alt=""></td>
                             </div>
-                                <input type="file" name="image" class="form-control">
+                                <input type="text" name="image" class="form-control">
                             </div>
                         </div>
                         <div class="row mb-3">

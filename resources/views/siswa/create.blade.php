@@ -36,7 +36,7 @@
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Upload Photo</label>
                                 <div class="col-sm-12">
-                                    <input class="form-control" name="image" type="file" id="formFile" required>
+                                    <input class="form-control" name="image" type="text" id="formFile" required>
                                 </div>
                             </div>
                                 <div class="modal-footer">

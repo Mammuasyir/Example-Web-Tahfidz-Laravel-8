@@ -42,7 +42,7 @@
                                 <img src="{{$u->image}}" alt="Image" class="rounded-circle" style="width: 100px !important; height: 100px">
                             </div>
                             <br>
-                                <input name="image" type="file" class="form-control">
+                                <input name="image" type="text" class="form-control">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
