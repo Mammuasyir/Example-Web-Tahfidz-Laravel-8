@@ -16,9 +16,9 @@ class LandingController extends Controller
 
     public function portal()
     {
-        $berita = Berita::all();
+        $berita = Berita::orderBy('created_at', 'desc')->get();
 
-        return view('landing.portal-berita', compact('berita'));
+        return view('landing.portal-berita', compact('berita')); 
     }
 
     public function read($id)

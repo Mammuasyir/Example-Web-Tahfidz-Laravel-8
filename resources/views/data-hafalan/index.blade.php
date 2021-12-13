@@ -54,6 +54,7 @@
                                 <td>{{$haf->jumlah_baris}}</td>
                                 <td>{{$haf->created_at}}</td>
                                 <td>
+                                @if(Auth::user()->role !== 'User')
                                     <div class="d-flex justify-content mb-3">
                                         <button type="button customs" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#verticalycenter{{$haf->id}}">
                                             <i class="bx bxs-edit"></i>
@@ -68,6 +69,7 @@
                                         </form>
                                         @include('data-hafalan.edit-hb')
                                     </div>
+                                    @endif
                                 </td>
                             </tr>
                             @empty
@@ -109,6 +111,7 @@
                                 <td>{{$mu->jumlah_baris}}</td>
                                 <td>{{$mu->created_at}}</td>
                                 <td>
+                                @if(Auth::user()->role !== 'User')
                                     <div class="d-flex justify-content mb-3">
                                         <button type="button customs" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#murajaahedit{{$mu->id}}">
                                             <i class="bx bxs-edit"></i>
@@ -123,6 +126,7 @@
                                         </form>
                                         @include('data-hafalan.edit-m')
                                     </div>
+                                    @endif
                                 </td>
                             </tr>
                             @empty

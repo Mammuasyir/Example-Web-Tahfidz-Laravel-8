@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::match(['get', 'post'], '/register', function () {
+    return redirect('login');
+});
+
 Route::get('/', [App\Http\Controllers\LandingController::class, 'portal'])->name('portal');
 Route::get('/read-artikel/{id}', [App\Http\Controllers\LandingController::class, 'read'])->name('read');
 

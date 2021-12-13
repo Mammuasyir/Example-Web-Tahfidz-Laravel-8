@@ -140,9 +140,9 @@ class UserController extends Controller
 
     public function tableuser()
     {
-        // if (auth()->user()->role !== 'Admin') {
-        //     abort(403);
-        // }
+        if (auth()->user()->role !== 'Admin') {
+            abort(403);
+        }
         $user = User::all();
         return view('user.content.tableuser', compact('user'));
     }
