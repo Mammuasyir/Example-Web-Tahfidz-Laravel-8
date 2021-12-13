@@ -53,7 +53,7 @@
             <h2 style="padding-top: 30px;"><strong>{{$berita->judul}}</strong></h2>
             <h6 style="color:slategray; padding-bottom: 70px">{{$berita->created_at}}</h6>
             <center>
-                <img src="{{url('storage/',$berita->image)}}" style="width: 700px !important; height: 300px; padding-bottom:40px" class="rounded-box" alt="">
+                <img src="{{$berita->image}}" style="width: 700px !important; height: 300px; padding-bottom:40px" class="rounded-box" alt="">
             </center>
             <p style="padding-top: 20px;">{!! $berita->isi !!}</p>
         </div>

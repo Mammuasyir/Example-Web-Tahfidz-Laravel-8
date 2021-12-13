@@ -120,7 +120,7 @@
                     @forelse($berita as $be)
                     <div class="col-md-4" style="padding-top: 25px !important;">
                         <div class="card text-center" style="width: 21rem !important; height: 24rem">
-                            <img src="{{url('storage/',$be->image)}}" class="card-img-top img-thumbnail" alt="">
+                            <img src="{{$be->image}}" class="card-img-top img-thumbnail" alt="">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{route('read', $be->id)}}"><strong>{{$be->judul}}</strong></a></h5>
                                 <div class="summary">

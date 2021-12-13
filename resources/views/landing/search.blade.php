@@ -87,7 +87,7 @@
             @foreach($cari as $si)
             <p class="halo text-center"></p>
             <div class="cards">
-                <img src="{{url('storage/',$si->image)}}" class="img" alt="John" style="width:50%">
+                <img src="{{$si->image}}" class="img" alt="John" style="width:50%">
                 <h2 class="mt-3">{{$si->nama_siswa}}</h2>
                 <p class="title">{{$si->halaqoh->nama_halaqoh}}</p>
                 <p>Kode : {{$si->kode_hafalan}}</p>

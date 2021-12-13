@@ -46,7 +46,7 @@
                             <div class="form-group form-group-default">
                                 <label>Photo </label>
                                 <div class="col-lg-6 col-md-20 col-sm-8">
-                                <img src="{{url('storage/', $si->image)}}" alt="Image" class="rounded-circle" style="width: 100px !important; height: 100px">
+                                <img src="{{$si->image}}" alt="Image" class="rounded-circle" style="width: 100px !important; height: 100px">
                             </div>
                             <br>
                                 <input name="image" type="file" class="form-control">

@@ -63,7 +63,7 @@
                                 <td>{{$si->kode_hafalan}}</td>
                                 <td>{{$si->total_hafalan}}</td>
                                 <td>
-                                    <img src="{{url('storage/',$si->image)}}" style="width: 100px !important; height: 100px" class="avatar-img rounded-circle" alt="">
+                                    <img src="{{$si->image}}" style="width: 100px !important; height: 100px" class="avatar-img rounded-circle" alt="">
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content mb-3">

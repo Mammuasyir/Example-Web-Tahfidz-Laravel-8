@@ -29,7 +29,7 @@
                             <label for="image" class="col-sm-2 col-form-label">Image</label>
                             <div class="col-sm-3">
                             <div class="col-lg-6 col-md-20 col-sm-8">
-                            <td><img src="{{url('storage/',$berita->image)}}" style="width: 130px !important; height: 80px" class="rounded-box" alt=""></td>
+                            <td><img src="{{$berita->image}}" style="width: 130px !important; height: 80px" class="rounded-box" alt=""></td>
                             </div>
                                 <input type="file" name="image" class="form-control">
                             </div>
