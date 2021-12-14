@@ -1,7 +1,7 @@
 <div class="tab-pane fade profile-edit pt-3" id="profile-edit{{Auth::user()->username}}">
 
     <!-- Profile Edit Form -->
-    
+    <form method="post" action="{{route('profile.update', Auth::user()->username)}}" role="form" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
