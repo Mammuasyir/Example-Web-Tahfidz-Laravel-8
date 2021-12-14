@@ -7,7 +7,7 @@
                                 <div class="col-lg-9 col-md-8" name="name" >{{Auth::user()->name}}</div>
                             </div>
 
-                            <div class="row">
+                            <div class="row"> 
                                 <div class="col-lg-3 col-md-4 label">Username</div>
                                 <div class="col-lg-9 col-md-8">{{Auth::user()->username}}</div>
                             </div>

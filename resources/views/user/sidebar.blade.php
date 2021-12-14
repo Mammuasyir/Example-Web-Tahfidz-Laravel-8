@@ -3,7 +3,7 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
 
-            <li class="nav-item">
+            <li class="nav-item"> 
                 <a class="nav-link collapsed" href="/profile">
                     @if (Auth::user()->image != '')
                     <img src="{{Auth::user()->image}}" alt="Pp" class="avatar-img rounded-circle" style="width: 60px !important; height: 60px">

@@ -1,7 +1,6 @@
 @extends('template')
 
 @section('content')
-
 <div class="pagetitle">
     <h1>Profile</h1>
     <nav>
@@ -31,7 +30,7 @@
                         <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
                         <a href="https://web.whatsapp.com/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                    </div>
+                    </div> 
                 </div>
             </div>
 
