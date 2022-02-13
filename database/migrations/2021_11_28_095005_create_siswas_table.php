@@ -11,7 +11,7 @@ class CreateSiswasTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();

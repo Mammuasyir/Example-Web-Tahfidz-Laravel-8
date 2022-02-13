@@ -10,7 +10,7 @@ class Kelas extends Model
     use HasFactory;
     protected $fillable = [
         'kelas'
-    ];
+    ]; 
 
     public function halaqoh()
     {

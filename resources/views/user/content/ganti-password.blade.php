@@ -13,7 +13,7 @@
 
             @if (Session::get('Failed'))
             <div class="alert alert-danger alert-dismissible fade-show" role="alert">
-                {{Session::get('Failed')}}
+                {{Session::get('Failed')}} 
             </div>
             @endif
 

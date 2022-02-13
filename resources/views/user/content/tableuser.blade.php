@@ -57,7 +57,7 @@
                         </thead>
                         <tbody>
 
-                            @foreach($user as $u)
+                            @foreach($user as $u) 
                             <tr>
                                 <th scope="row">{{$u->id}}</th>
                                 <td style="font-style: italic;">{{$u->role}}</td>

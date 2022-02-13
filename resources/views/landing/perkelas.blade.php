@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="pagetitle">
+<div class="pagetitle"> 
 
     <h1>Halaqoh</h1>
     <nav>

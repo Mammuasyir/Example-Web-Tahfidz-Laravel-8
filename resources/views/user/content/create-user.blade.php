@@ -17,7 +17,7 @@
                             <div class="form-group form-group-default">
                                 <label>Username</label>
                                 <input id="username" name="username" type="text" class="form-control" placeholder="fill username" required>
-                            </div>
+                            </div> 
                             <div class="form-group form-group-default">
                                 <label>Email</label>
                                 <input id="email" name="email" type="text" class="form-control" placeholder="fill email" required>

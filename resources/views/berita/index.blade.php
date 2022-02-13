@@ -63,7 +63,7 @@
                             @forelse($berita as $be)
                             <tr>
                                 <th scope="row">{{$be->id}}</th>
-                                <td><img src="{{$be->image}}" style="width: 130px !important; height: 80px" class="rounded-box" alt=""></td>
+                                <td><img src="{{url('/storage', $be->image)}}" style="width: 130px !important; height: 80px" class="rounded-box" alt=""></td>
                                 <td>
                                     <div class="col-7 text-truncate" style="overflow:hidden; white-space:nowrap; width: 150px;">
                                     <a href="{{route('berita.show', $be->id)}}">{{$be->judul}}</a>

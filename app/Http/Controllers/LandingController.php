@@ -36,13 +36,13 @@ class LandingController extends Controller
         $i = 1;
         $contact = Contact::take(4)->orderBy('id', 'desc')->get();
         $kelas = Kelas::all();
-        $halaqoh = Halaqoh::orderBy('id', 'desc')->simplePaginate(6);
+        $halaqoh = Halaqoh::orderBy('id', 'desc')->simplePaginate(6); 
         $berita = Berita::orderBy('id', 'desc')->get();
         $sort = Siswa::take(5)->orderBy('total_hafalan', 'desc')->get();
         $asc = Siswa::take(5)->orderBy('total_hafalan', 'asc')->get();
 
         return view('dashboard', compact('kelas', 'halaqoh', 'berita', 'sort', 'i', 'asc','contact', 'a'));
-    }
+    } 
 
     public function perKelas($id)
     {
@@ -124,7 +124,7 @@ class LandingController extends Controller
 
         return view('landing.sertifikat', compact('title', 'siswa'));
     }
-
+    
     public function searchSiswa(Request $request)
     {
         $sis = Siswa::all();

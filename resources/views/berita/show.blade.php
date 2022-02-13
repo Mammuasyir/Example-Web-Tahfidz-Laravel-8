@@ -17,7 +17,7 @@
     <div class="card-body">
         <h2>{{$berita->judul}}</h2>
         <h6>{{$berita->created_at}}</h6>
-        <img src="{{$berita->image}}" style="width: 900px !important; height: 300px; padding-top:60px" class="rounded-box" alt="">
+        <img src="{{url('/storage', $berita->image)}}" style="width: 900px !important; height: 300px; padding-top:60px" class="rounded-box" alt="">
         <p style="padding-top: 20px;">{!! $berita->isi !!}</p>
     </div>
 </div>

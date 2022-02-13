@@ -14,4 +14,4 @@ class Hafalanbaru extends Model
     {
     return $this->belongsTo(Siswa::class);
     }
-}
+} 

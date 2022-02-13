@@ -29,8 +29,8 @@ class ChangePasswordController extends Controller
             }
         
 
-            // return redirect()->back()->with('Success', 'Hore !');
 
+            
         }else{
             return redirect()->back()->with('Failed', 'Password Salah !');
         }

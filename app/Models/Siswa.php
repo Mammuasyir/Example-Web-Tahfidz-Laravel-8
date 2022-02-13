@@ -13,7 +13,7 @@ class Siswa extends Model
     public function halaqoh()
     {
     return $this->belongsTo(Halaqoh::class);
-    }
+    } 
 
     public function hafalanbaru()
     {

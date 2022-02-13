@@ -15,7 +15,7 @@
 
 <section class="section">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12"> 
 
             @if (Session::get('success'))
             <div class="alert alert-success alert-dismissible fade-show" role="alert">
@@ -63,7 +63,7 @@
                                 <td>{{$si->kode_hafalan}}</td>
                                 <td>{{$si->total_hafalan}}</td>
                                 <td>
-                                    <img src="{{$si->image}}" style="width: 100px !important; height: 100px" class="avatar-img rounded-circle" alt="">
+                                    <img src="{{url('/storage', $si->image)}}" style="width: 100px !important; height: 100px" class="avatar-img rounded-circle" alt="">
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content mb-3">
@@ -85,7 +85,7 @@
 
                             @empty
                             <tr>
-                                <td colspan="3" class="text-center">Kelas tidak ditemukan</td>
+                                <td colspan="8" class="text-center">Data Siswa tidak ditemukan</td>
                             </tr>
 
                             @endforelse

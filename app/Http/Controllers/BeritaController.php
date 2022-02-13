@@ -47,7 +47,7 @@ class BeritaController extends Controller
         Berita::create([
             'judul'         => $request->judul,
             'isi'           => $request->isi,
-            'image'         => $request->image
+            'image'         => $request->file('image')->store('image-berita')
 
         ]);
         return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan!');
@@ -68,7 +68,7 @@ class BeritaController extends Controller
     public function updateBerita(Request $request, $id)
     {
 
-        if (empty($request->image)) {
+        if (empty($request->file('image'))) {
         Berita::findOrfail($id)->update([
             'judul'         => $request->judul,
             'isi'           => $request->isi,
@@ -81,7 +81,7 @@ class BeritaController extends Controller
             $berita->update([
             'judul'         => $request->judul,
             'isi'           => $request->isi,
-            'image'         => $request->image
+            'image'         => $request->file('image')->store('image-berita')
         ]);
 
         return redirect()->back()->with('success', 'Data berhasil diubah!');

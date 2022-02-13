@@ -21,12 +21,12 @@
             <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
             <div class="col-md-8 col-lg-9">
             @if (Auth::user()->image != '')
-            <img src="{{Auth::user()->image}}" alt="Profile" class="rounded-circle" style="width: 100px !important; height: 130px">
+            <img src="{{url('/storage', Auth::user()->image)}}" alt="Profile" class="rounded-circle" style="width: 100px !important; height: 130px">
                     @else
                     <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username}}" alt="..." class="avatar-img rounded">
                     @endif
                 <div class="pt-2">
-                    <input name="image" type="text" class="btn btn-primary btn-sm" title="Upload new profile image">
+                    <input name="image" type="file" class="btn btn-primary btn-sm" title="Upload new profile image">
                     
                 </div>
             </div>

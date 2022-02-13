@@ -7,7 +7,7 @@
             </div>
             <form method="post" action="{{route('profile.update', $u->username)}}" role="form" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
+                @method('PUT') 
                 
                 <div class="modal-body">
                     <div class="row">
@@ -39,10 +39,10 @@
                             <div class="form-group form-group-default">
                                 <label>Photo </label>
                                 <div class="col-lg-6 col-md-20 col-sm-8">
-                                <img src="{{$u->image}}" alt="Image" class="rounded-circle" style="width: 100px !important; height: 100px">
+                                <img src="{{url('/storage', $u->image)}}" alt="Image" class="rounded-circle" style="width: 100px !important; height: 100px">
                             </div>
                             <br>
-                                <input name="image" type="text" class="form-control">
+                                <input name="image" type="file" class="form-control">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

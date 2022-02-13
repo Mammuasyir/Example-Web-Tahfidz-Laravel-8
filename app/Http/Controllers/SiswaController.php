@@ -39,7 +39,7 @@ class SiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() 
     {
         if (auth()->user()->role !== 'Admin') {
             abort(403);
@@ -70,10 +70,10 @@ class SiswaController extends Controller
             'halaqoh_id'    => $request->halaqoh_id,
             'kode_hafalan' =>  'bebas', 
             'total_hafalan' => $request->total_hafalan,
-            'image'         => $request->image,
+            'image'         => $request->file('image')->store('image-siswa'),
         ]);
-        $karakter_kode = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        $siswas->kode_hafalan = substr(str_shuffle($karakter_kode), 0, 2);
+        $karakter_kode = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+        $siswas->kode_hafalan = substr(str_shuffle($karakter_kode), 0, 4);
         $siswas->update();
 
         return redirect()->back()->with('success', 'Data berhasil ditambahkan.');
@@ -110,7 +110,7 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (empty($request->image)) {
+        if (empty($request->file('image'))) {
             Siswa::findOrfail($id)->update([
                 'nama_siswa' => $request->nama_siswa,
                 'halaqoh_id' => $request->halaqoh_id,
@@ -125,7 +125,7 @@ class SiswaController extends Controller
                 'nama_siswa' => $request->nama_siswa,
                 'halaqoh_id' => $request->halaqoh_id,
                 'total_hafalan' => $request->total_hafalan,
-                'image'         => $request->image
+                'image'         => $request->file('image')->store('image-siswa')
             ]);
             return redirect()->route('siswa.index')->with('success', 'Data berhasil diupdate!');
         }

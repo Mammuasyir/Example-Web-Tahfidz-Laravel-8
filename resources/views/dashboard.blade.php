@@ -75,11 +75,10 @@
                     </div>
                 </div>
 
-
                 <!-- Reports Hafalan -->
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body"> 
                             <h5 class="card-title">Rote Chart <span>/Halaqoh</span></h5>
                             <section class="container mt-6">
                                 <div class="row mt-2">
@@ -117,10 +116,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($sort as $so)
+                                    @foreach($sort as $so) 
                                     <tr>
                                         <td class="fw-bold">{{$i++}}</td>
-                                        <td><img src="{{$so->image}}" style="width: 100px !important; height: 70px" class="avatar-img rounded-circle" alt=""></td>
+                                        <td><img src="{{url('/storage', $so->image)}}" style="width: 100px !important; height: 70px" class="avatar-img rounded-circle" alt=""></td>
                                         <td>{{$so->nama_siswa}}</td>
                                         <td>{{$so->halaqoh->nama_halaqoh}}</td>
                                         <td class="fw-bold">{{$so->total_hafalan}}</td>
@@ -156,7 +155,7 @@
                                     @foreach($asc as $as)
                                     <tr>
                                         <td class="fw-bold">{{$a++}}</td>
-                                        <td><img src="{{$as->image}}" style="width: 100px !important; height: 70px" class="avatar-img rounded-circle" alt=""></td>
+                                        <td><img src="{{url('/storage', $as->image)}}" style="width: 100px !important; height: 70px" class="avatar-img rounded-circle" alt=""></td>
                                         <td>{{$as->nama_siswa}}</td>
                                         <td>{{$as->halaqoh->nama_halaqoh}}</td>
                                         <td class="fw-bold">{{$as->total_hafalan}}</td>
@@ -198,7 +197,7 @@
                                 </div>
                                 @endforeach
                             </div>
-                        </section>
+                    </section>
 
                     </div>
 
@@ -217,7 +216,7 @@
                     <div class="news">
                         <div class="row mt-3">
                             <div class="post-item clearfix">
-                                <img src="{{$be->image}}" style="width: 80px !important; height: 60px" alt="">
+                                <img src="{{url('/storage', $be->image)}}" style="width: 80px !important; height: 60px" alt="">
                                 <h4><a href="{{route('berita.show', $be->id)}}">{{$be->judul}}</a></h4>
                                 <h6>{!! $be->isi !!}</h6>
                             </div>

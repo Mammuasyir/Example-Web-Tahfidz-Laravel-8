@@ -84,3 +84,5 @@ Route::post('/make-contact', [App\Http\Controllers\ContactController::class, 'ma
 Route::get('/show-contact/{id}', [App\Http\Controllers\ContactController::class, 'showContact'])->name('contact.show');
 Route::get('/list-contact', [App\Http\Controllers\ContactController::class, 'listContact'])->name('contact.list');
 Route::delete('/del-contact/{id}', [App\Http\Controllers\ContactController::class, 'delContact'])->name('contact.destroy');
+
+Route::get('/importuser', [App\Http\Controllers\Controller::class, 'import']);

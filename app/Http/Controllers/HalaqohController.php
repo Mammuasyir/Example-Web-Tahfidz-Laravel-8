@@ -23,7 +23,7 @@ class HalaqohController extends Controller
     }
 
 
-public function addHalaqoh(Request $request)
+public function addHalaqoh(Request $request) 
 {
     // return dd($request);
     Halaqoh::create([

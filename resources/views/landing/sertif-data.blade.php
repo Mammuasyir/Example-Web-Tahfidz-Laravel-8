@@ -17,7 +17,7 @@
 <div class="card">
     <div class="card-body">
         <!-- Table with stripped rows -->
-        <table class="table datatable">
+        <table class="table datatable"> 
             <thead>
                 <tr>
                     <th scope="col">Id</th>

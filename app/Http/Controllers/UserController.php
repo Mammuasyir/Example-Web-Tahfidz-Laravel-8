@@ -98,7 +98,7 @@ class UserController extends Controller
         // return dd($request);
         $title = "My profile";
 
-        if(empty($request->image)){
+        if(empty($request->file('image'))){
             $user = User::where('username', $username)->first();
             $user->update([
                 'role'           => $request->role,
@@ -112,15 +112,15 @@ class UserController extends Controller
         }
         else{
             $user = User::where('username', $username)->first();
-            Storage::delete($user->image);
-            $user->update([
+            
+            $user->update([ 
             'role'           => $request->role,
             'name'           => $request->name,
             'email'          => $request->email,
             'username'       => $request->username,
             'number_phone'   => $request->number_phone,
             'address'        => $request->address,
-            'image'          => $request->image,
+            'image'             => $request->file('image')->store('image-user')
         ]);
         return redirect()->back()->with('success', 'Profile berhasil diupdate !');
 
