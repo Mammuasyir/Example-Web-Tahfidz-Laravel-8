@@ -10,6 +10,23 @@
                 @method('PUT')
                 <div class="modal-body">
                     <div class="row">
+                    <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                                <label>Jenjang</label>
+                                <select name="jenjang_id" style="border: 1px solid;" required
+                                    class="form-select bg-light">
+                                    <option value="">&nbsp;&nbsp;&nbsp;-- Pilih Jenjang --</option>
+                                    @foreach($jenjang as $row)
+                                    @if($row->id == $ke->jenjang_id)
+                                    <option value="{{$row->id}}" selected='selected'>&nbsp;&nbsp;&nbsp;{{$row->jenjang}}</option>
+                                    @else
+                                    <option value="{{$row->id}}">&nbsp;&nbsp;&nbsp;{{$row->jenjang}}</option>
+                                    @endif
+
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Kelas</label>

@@ -91,7 +91,7 @@
                     <p class="halo text-center"></p>
 
                     <div class="cards">
-                        <img src="{{$si->image}}" class="img" alt="John">
+                        <img src="{{url('/storage', $si->image)}}" class="img" alt="John">
                         <h3 class="mt-2">{{$si->nama_siswa}}</h3>
                         <p class="title">{{$si->halaqoh->nama_halaqoh}}</p>
                         <p>Kode : {{$si->kode_hafalan}}</p>

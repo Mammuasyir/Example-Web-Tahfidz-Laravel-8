@@ -9,12 +9,22 @@ class Kelas extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'jenjang_id',
         'kelas'
-    ]; 
+    ];
+
+    public function siswa()
+    {
+        return $this->hasMany(Siswa::class, 'kelas_id', 'id');
+    }
 
     public function halaqoh()
     {
-    return $this->hasMany(Halaqoh::class, 'kelas_id', 'id');
+        return $this->hasMany(Halaqoh::class, 'kelas_id', 'id');
     }
 
+    public function jenjang()
+    {
+        return $this->belongsTo(jenjang::class);
+    }
 }

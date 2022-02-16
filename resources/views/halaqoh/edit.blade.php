@@ -20,6 +20,26 @@
                                 <input id="guru" name="nama_guru" value="{{$ha->nama_guru}}" type="text" class="form-control" placeholder="fill name">
                             </div>
                             <div class="form-group form-group-default">
+                                <label>Jenjang</label>
+                                <select class="@error('jenjang_id') is-invalid @enderror form-select input-fixed" name="jenjang_id">
+												<option value="">--Pilih Jenjang--</option>
+												@foreach($jenjang as $je)
+                                                
+                                                @if($je->id == $ha->jenjang_id)
+												<option value="{{$je->id}}" selected='selected'>{{$je->jenjang}}</option>
+                                                @else
+                                                <option value="{{$je->id}}">{{$je->jenjang}}</option>
+                                                @endif
+
+												@endforeach
+											</select>
+											@error('jenjang_id')
+											<div class="invalid-feedback" style="width: 300px !important;" role="alert">
+										<strong>{{$message}}</strong>
+									</div>
+									@enderror
+                        </div>
+                            <div class="form-group form-group-default">
                                 <label>Kelas</label>
                                 <select class="@error('kelas_id') is-invalid @enderror form-select input-fixed" name="kelas_id">
 												<option value="">--Pilih Kelas--</option>

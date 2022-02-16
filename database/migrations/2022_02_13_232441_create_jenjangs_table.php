@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHalaqohsTable extends Migration
+class CreateJenjangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateHalaqohsTable extends Migration
      */
     public function up()
     {
-        Schema::create('halaqohs', function (Blueprint $table) {
+        Schema::create('jenjangs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jenjang_id')->nullable();
-            $table->foreignId('kelas_id')->nullable();
-            $table->string('nama_halaqoh');
-            $table->string('nama_guru');
-            $table->string('slug');
+            $table->string('jenjang');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateHalaqohsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('halaqohs');
+        Schema::dropIfExists('jenjangs');
     }
 }

@@ -29,8 +29,20 @@
             </li><!-- End Data User -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#list-jenjang" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Jenjang</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="list-jenjang" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/jenjang">
+                            <i class="bi bi-circle"></i><span>Jenjang list</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Kelas Nav -->
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#list-kelas" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Class</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-menu-button-wide"></i><span>Kelas</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="list-kelas" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>

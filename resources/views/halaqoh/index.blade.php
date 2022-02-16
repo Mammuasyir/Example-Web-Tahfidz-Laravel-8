@@ -41,6 +41,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Jenjang</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Nama Halaqoh</th>
                                 <th scope="col">Nama Guru</th>
@@ -51,6 +52,7 @@
                             @forelse($halaqoh as $ha)
                             <tr>
                                 <th scope="row">{{$ha->id}}</th>
+                                <td>{{$ha->jenjang->jenjang}}</td>
                                 <td>{{$ha->kelas->kelas}}</td>
                                 <td>{{$ha->nama_halaqoh}}</td>
                                 <td>{{$ha->nama_guru}}</td>
@@ -100,15 +102,19 @@
             <form method="POST" action="{{route('halaqoh.add')}}" role="form">
                 @csrf
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group form-group-default">
-                                <label>Nama Halaqoh</label>
-                                <input id="halaqoh" name="nama_halaqoh" type="text" class="form-control" placeholder="fill name" required>
-                            </div>
-                            <div class="form-group form-group-default">
-                                <label>Nama Guru</label>
-                                <input id="guru" name="nama_guru" type="text" class="form-control" placeholder="fill name" required>
+                <div class="form-group form-group-default">
+                                <label>Jenjang</label>
+                                <select class="@error('jenjang_id') is-invalid @enderror form-select input-fixed" name="jenjang_id" required>
+                                    <option value selected="">--Pilih Jenjang--</option>
+                                    @foreach($jenjang as $je)
+                                    <option value="{{$je->id}}">{{$je->jenjang}}</option>
+                                    @endforeach
+                                </select>
+                                @error('jenjang_id')
+                                <div class="invalid-feedback" style="width: 300px !important;" role="alert">
+                                    <strong>{{$message}}</strong>
+                                </div>
+                                @enderror
                             </div>
                             <div class="form-group form-group-default">
                                 <label>Kelas</label>
@@ -123,6 +129,16 @@
                                     <strong>{{$message}}</strong>
                                 </div>
                                 @enderror
+                            </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                                <label>Nama Halaqoh</label>
+                                <input id="halaqoh" name="nama_halaqoh" type="text" class="form-control" placeholder="fill name" required>
+                            </div>
+                            <div class="form-group form-group-default">
+                                <label>Nama Guru</label>
+                                <input id="guru" name="nama_guru" type="text" class="form-control" placeholder="fill name" required>
                             </div>
                         </div>
                     </div>

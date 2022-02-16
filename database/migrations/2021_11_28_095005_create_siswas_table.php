@@ -15,6 +15,8 @@ class CreateSiswasTable extends Migration
     {
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('jenjang_id')->nullable();
+            $table->foreignId('kelas_id')->nullable();
             $table->foreignId('halaqoh_id')->nullable();
             $table->string('nama_siswa');
             $table->text('total_hafalan')->nullable();

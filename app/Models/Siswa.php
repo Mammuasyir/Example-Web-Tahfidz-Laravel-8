@@ -10,10 +10,20 @@ class Siswa extends Model
     use HasFactory;
     protected $guarded = [];
 
+    public function jenjang()
+    {
+    return $this->belongsTo(jenjang::class);
+    }
+
+    public function kelas()
+    {
+    return $this->belongsTo(Kelas::class);
+    }
+
     public function halaqoh()
     {
     return $this->belongsTo(Halaqoh::class);
-    } 
+    }
 
     public function hafalanbaru()
     {

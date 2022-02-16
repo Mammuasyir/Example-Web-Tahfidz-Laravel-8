@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Data Kelas</h1>
+    <h1>Data Jenjang</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-            <li class="breadcrumb-item">Kelas</li>
+            <li class="breadcrumb-item">Jenjang</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -32,8 +32,8 @@
                 <div class="card-body">
                     <!-- Small Modal -->
                     <div class="card-body" style="margin-bottom: 45px; margin-top: 20px;">
-                    <button type="button" class="btn btn-primary" class="text-right" style="float: right;" data-bs-toggle="modal" data-bs-target="#addKelas">
-                    <i class="bx bxs-file-plus">Add Kelas</i>
+                    <button type="button" class="btn btn-primary" class="text-right" style="float: right;" data-bs-toggle="modal" data-bs-target="#addJenjang">
+                    <i class="bx bxs-file-plus">Add Jenjang</i>
                     </button>
                     </div>
 
@@ -43,38 +43,36 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Jenjang</th>
-                                <th scope="col">Kelas</th>
                                 <th style="width: 20%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($kelas as $ke)
+                            @forelse($jenjang as $je)
                             <tr>
-                                <th scope="row">{{$i++}}</th>
-                                <td>{{ $ke->jenjang->jenjang }}</td>
-                                <td>{{$ke->kelas}}</td>
+                                <th scope="row">{{$je->id}}</th>
+                                <td>{{$je->jenjang}}</td>
                                 <td>
                                 <div class="d-flex justify-content mb-3">
                                         
-                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editKelas{{$ke->id}}">
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editJenjang{{$je->id}}">
                                                 <i class="bx bxs-edit"></i>
                                             </button>
 
-                                        <form action="{{route('kelas.destroy', $ke->id)}}" method="POST">
+                                        <form action="{{route('jenjang.destroy', $je->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" data-toggle="tooltip" data-original-title="Remove" onclick="return confirm('Hapus Data {{$ke->kelas}} ?')">
+                                            <button type="submit" class="btn btn-danger" data-toggle="tooltip" data-original-title="Remove" onclick="return confirm('Hapus Data {{$je->jenjang}} ?')">
                                                 <i class="bx bx-x"></i>
                                             </button>
                                         </form>
-                                        @include('kelas.edit')
+                                        @include('jenjang.edit')
                                     </div>
                                 </td>
                             </tr>
 
                             @empty
                             <tr>
-                                <td colspan="5" class="text-center">Kelas tidak ditemukan</td>
+                                <td colspan="3" class="text-center">Jenjang tidak ditemukan</td>
                             </tr>
 
                             @endforelse
@@ -89,33 +87,21 @@
     </div>
 </section>
 
-<div class="modal fade" id="addKelas" tabindex="-1">
+<div class="modal fade" id="addJenjang" tabindex="-1">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add Kelas</h5>
+                <h5 class="modal-title">Add Jenjang</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="POST" action="{{route('kelas.add')}}" role="form">
+            <form method="POST" action="{{route('jenjang.add')}}" role="form">
                 @csrf
                 <div class="modal-body">
                     <div class="row">
-                    <div class="col-sm-12">
-                            <div class="form-group form-group-default">
-                                <label>Jenjang</label>
-                                <select name="jenjang_id" style="border: 1px solid;" required
-                                    class="form-select bg-light">
-                                    <option value="">&nbsp;&nbsp;&nbsp;-- Pilih Jenjang --</option>
-                                    @foreach($jenjang as $row)
-                                    <option value="{{$row->id}}">&nbsp;&nbsp;&nbsp;{{$row->jenjang}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Kelas</label>
-                                <input id="kelas" name="kelas" type="text" class="form-control" placeholder="fill name" required>
+                                <label>Jenjang</label>
+                                <input id="jenjang" name="jenjang" type="text" class="form-control" placeholder="fill name" required>
                             </div>
                         </div>
                     </div>

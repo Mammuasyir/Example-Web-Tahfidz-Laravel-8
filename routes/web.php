@@ -36,6 +36,11 @@ Route::get('/tableuser', [App\Http\Controllers\UserController::class, 'tableuser
 Route::delete('/del-user/{id}', [App\Http\Controllers\UserController::class, 'delUser'])->name('deluser')->middleware('auth');
 //Changepassword route
 Route::put('/update-pass', [App\Http\Controllers\Auth\ChangePasswordController::class, 'updatePass'])->name('updatePass')->middleware('auth');
+//Jenjang route
+Route::get('/jenjang', [App\Http\Controllers\JenjangController::class, 'index'])->name('jenjang.index')->middleware('auth');
+Route::post('/add-jenjang', [App\Http\Controllers\JenjangController::class, 'addJenjang'])->name('jenjang.add')->middleware('auth');
+Route::put('/edit-jenjang/{id}', [App\Http\Controllers\JenjangController::class, 'editJenjang'])->name('jenjang.edit')->middleware('auth');
+Route::delete('/del-jenjang/{id}', [App\Http\Controllers\JenjangController::class, 'delJenjang'])->name('jenjang.destroy')->middleware('auth');
 //Kelas route
 Route::get('/kelas', [App\Http\Controllers\KelasController::class, 'index'])->name('kelas.index')->middleware('auth');
 Route::post('/add-kelas', [App\Http\Controllers\KelasController::class, 'addKelas'])->name('kelas.add')->middleware('auth');
@@ -85,4 +90,4 @@ Route::get('/show-contact/{id}', [App\Http\Controllers\ContactController::class,
 Route::get('/list-contact', [App\Http\Controllers\ContactController::class, 'listContact'])->name('contact.list');
 Route::delete('/del-contact/{id}', [App\Http\Controllers\ContactController::class, 'delContact'])->name('contact.destroy');
 
-Route::get('/importuser', [App\Http\Controllers\Controller::class, 'import']);
+Route::post('/importuser', [App\Http\Controllers\Controller::class, 'import']);

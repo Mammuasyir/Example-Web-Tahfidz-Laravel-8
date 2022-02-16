@@ -15,8 +15,9 @@ class SiswaImport implements ToModel
     public function model(array $row)
     {
         return new Siswa([
-            'nama_siswa' => $row[1],
-            'total_hafalan' => $row[2],
+            'jenjang_id' => $row[1],
+            'nama_siswa' => $row[2],
+            'total_hafalan' => $row[3],
         ]);
     }
 }

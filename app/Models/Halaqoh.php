@@ -11,10 +11,19 @@ class Halaqoh extends Model
     protected $guarded = [];
 
 
+    public function jenjang()
+    {
+    return $this->belongsTo(jenjang::class);
+    }
 
     public function kelas()
     {
     return $this->belongsTo(Kelas::class);
+    }
+
+    public function user()
+    {
+    return $this->belongsTo(User::class);
     }
 
     public function siswa()

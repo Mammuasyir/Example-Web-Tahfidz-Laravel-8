@@ -87,19 +87,30 @@
             @foreach($cari as $si)
             <p class="halo text-center"></p>
             <div class="cards">
-                <img src="{{$si->image}}" class="img" alt="John" style="width:50%">
+                <img src="{{url('/storage', $si->image)}}" class="img" alt="John" style="width:50%">
                 <h2 class="mt-3">{{$si->nama_siswa}}</h2>
                 <p class="title">{{$si->halaqoh->nama_halaqoh}}</p>
                 <p>Kode : {{$si->kode_hafalan}}</p>
                 <p>Hafalan : {{$si->total_hafalan}}</p>
 
                 <!-- Vertically centered Modal -->
+                @if(Auth::user()->role == 'Admin')
                 <button type="button customs" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
                     <i class="bx bxs-file-plus">Hafalan Baru</i>
                 </button>
                 <button type="button customs" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#murajaah">
                     <i class="bx bxs-file-plus">Murajaah</i>
                 </button>
+                @elseif(Auth::user()->role == 'Guru')
+                <button type="button customs" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                    <i class="bx bxs-file-plus">Hafalan Baru</i>
+                </button>
+                <button type="button customs" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#murajaah">
+                    <i class="bx bxs-file-plus">Murajaah</i>
+                </button>
+                @else
+                
+                @endif
             </div>
             @endforeach
         </div>
